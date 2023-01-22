@@ -13,7 +13,8 @@ body {
 
 body {
     background: linear-gradient(45deg, #996DFF 0, #000000 15% 85%, #996DFF 100%);
-    backdrop-filter: blur(5rem)
+    backdrop-filter: blur(5rem);
+    overflow: hidden;
 }
 
 header {
@@ -58,8 +59,51 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .title {
     color: #FFF;
+    text-align: center;
+    font-size: 1.75em;
+}
+
+.title div:last-child h1 {
+    text-shadow: -1px -1px 0 #8257E5, 1px -1px 0 #8257E5, -1px 1px 0 #8257E5, 1px 1px 0 #8257E5;
+    color: #000;
+}
+
+.image {
+    width: 50%;
+    height: 40%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1380px) {
+    main {
+        flex-direction: row;
+    }
+    
+    .image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .title {
+        font-size: 1em;
+    }
+}
+
+
+@media (max-width: 786px) {
+    header {
+        
+    }
+    main {
+        flex-direction: column;
+    }
 }
