@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Manrope', sans-serif;
+    color: #FFF;
 }
 
 html,
@@ -12,9 +13,8 @@ body {
 }
 
 body {
-    background: linear-gradient(45deg, #996DFF 0, #000000 15% 85%, #996DFF 100%);
+    background: linear-gradient(45deg, #996DFF 0, #000000 15% 85%, #996DFF 100%) no-repeat center;
     backdrop-filter: blur(5rem);
-    overflow: hidden;
 }
 
 header {
@@ -28,7 +28,6 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    color: #FFF;
     gap: 2em;
 }
 
@@ -45,13 +44,12 @@ nav ul li:hover {
     border: 1px solid #8257E5;
     background: none;
     border-radius: 6px;
-    color: #FFF;
     font-weight: 800;
     text-transform: uppercase;
     cursor: pointer;
 }
 
-.button button:hover {
+header .button button:hover {
     background: #8257E5;
 }
 
@@ -59,11 +57,14 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    height: 80%;
+    width: 100%;
+    background: url(./assets/rocket-coffee.png) no-repeat bottom;
+    background-size: 35em;
 }
 
 .title {
-    color: #FFF;
     text-align: center;
     font-size: 1.75em;
 }
@@ -73,37 +74,103 @@ main {
     color: #000;
 }
 
-.image {
-    width: 50%;
-    height: 40%;
+header div:first-child span {
+    display: none;
 }
 
-.image img {
-    width: 100%;
+.menu {
+    display: none;
+    margin-right: 0.75em;
+    cursor: pointer;
+    padding: 0.25em;
+}
+
+.menu img {
     height: 100%;
+    width: 100%;
 }
 
-@media (max-width: 1380px) {
+.text {
+    display: none;
+}
+
+main .button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.175em;
+    }
+
+    nav ul {
+        gap: 1em;
+    }
+
+    .button button {
+        padding: .5em 1.25em;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        height: 25%;
+    }
+
+    .button button {
+        padding: .75em 3em;
+    }
+
     main {
+        height: 75%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background: linear-gradient(180deg, #000000 0 90%, #996DFF 90% 99%, #000000 99% 100%);
+        backdrop-filter: blur(4rem);
+    }
+
+    header {
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 15%;
+    }
+
+    header .button {
+        display: none;
+    }
+
+    header div:first-child {
+        display: flex;
+        align-items: center;
+        margin-left: 1em;
+    }
+
+    header div:first-child span {
+        display: flex;
+    }
+
+    header nav {
+        display: none;
     }
     
-    .image {
-        width: 100%;
-        height: 100%;
+    .menu {
+        display: flex;
     }
 
-    .title {
-        font-size: 1em;
-    }
-}
-
-
-@media (max-width: 786px) {
-    header {
-        
-    }
     main {
-        flex-direction: column;
+        height: 85%;
+    }
+    
+    .text {
+        display: flex;
+    }
+    
+    main .button {
+        display: flex;
     }
 }
