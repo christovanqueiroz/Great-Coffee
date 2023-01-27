@@ -20,9 +20,10 @@ body {
 header {
     display: flex;
     width: 100%;
-    height: 20%;
+    height: 15%;
     align-items: center;
     justify-content: space-evenly;
+    border-bottom: 1px solid #29292E;
 }
 
 nav ul {
@@ -49,7 +50,7 @@ nav ul li:hover {
     cursor: pointer;
 }
 
-header .button button:hover {
+.button button:hover {
     background: #8257E5;
 }
 
@@ -58,7 +59,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 80%;
+    height: 85%;
     width: 100%;
     background: url(./assets/rocket-coffee.png) no-repeat bottom;
     background-size: 35em;
@@ -78,14 +79,14 @@ header div:first-child span {
     display: none;
 }
 
-.menu {
+.open-menu {
     display: none;
     margin-right: 0.75em;
     cursor: pointer;
     padding: 0.25em;
 }
 
-.menu img {
+.open-menu img {
     height: 100%;
     width: 100%;
 }
@@ -96,6 +97,31 @@ header div:first-child span {
 
 main .button {
     display: none;
+}
+
+.hide {
+    display: none;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.menu-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    margin: 0 1em;
+    border-bottom: 1px solid #29292E;
+}
+
+.menu-head div:first-child{
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -158,19 +184,58 @@ main .button {
         display: none;
     }
     
-    .menu {
+    .open-menu {
         display: flex;
     }
 
     main {
         height: 85%;
+        gap: 1.5em;
     }
     
     .text {
+        margin-top: 1em;
         display: flex;
+        text-align: center;
+        font-size: 1.5em;
+        padding: 0 2em;
     }
     
     main .button {
         display: flex;
+    }
+}
+
+@media (max-width: 270px) {
+    header div:first-child img {
+        max-width: 32px;
+        max-height: 36px;
+    }
+    
+    .title {
+        font-size: .85em;
+    }
+
+    .text {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 205px) {
+    header div:first-child span {
+        display: none;
+    }
+
+    .text {
+        padding: 0 1em;
+        font-size: .9em;
+    }
+
+    .title {
+        font-size: .75em;
+    }
+
+    .button button {
+        padding: .75em .75em;
     }
 }
